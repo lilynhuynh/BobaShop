@@ -4,6 +4,7 @@ class BobaShopController < ApplicationController
   def index
     puts "----------------- In Index -----------------"
     @allOrders = BobaOrder.all
+    @slideshowImages = Dir.glob("app/assets/images/slideshow/*.png").map { |path| File.basename(path) } # Returns all image names in slideshow
     puts "# of orders = #{@allOrders.size}"
   end
 

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "boba_shop/order"
 
   root "boba_shop#index"
+  get "/menu" => "boba_shop#menu"
+  get "/order" => "boba_shop#order"
   post "/boba_order" => "boba_shop#orderBoba"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
