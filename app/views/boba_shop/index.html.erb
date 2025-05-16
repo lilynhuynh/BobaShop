@@ -1,28 +1,43 @@
-<h1>BobaShop#index</h1>
+<nav style="background-color: #fecd1a; padding: 10px;">
+    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+        <li style="float: left; margin-right: 20px;">
+            <%= link_to "Home", root_path, style: "text-decoration: none; color: black;" %>
+        </li>
+        <li style="float: left; margin-right: 20px;">
+            <%= link_to "Menu", menu_path, style: "text-decoration: none; color: black;" %>
+        </li>
+        <li style="float: left;">
+            <%= link_to "Order", order_path, style: "text-decoration: none; color: black;" %>
+        </li>
+    </ul>
+</nav>
 
-<p>Find me in app/views/boba_shop/index.html.erb</p>
+<h1>Welcome To The Boba Shop</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th> Flavor </th>
-            <th> Toppings </th>
-            <th> Size </th>
-            <th> Sugar </th>
-            <th> Ice </th>
-        </tr>
-        <tbody>
-            <% @allOrders.each do |order| %>
-                <tr>
-                    <td> <%= order.flavor %> </td>
-                    <td> <%= order.toppings %> </td>
-                    <td> <%= order.size %> </td>
-                    <td> <%= order.sugar %> </td>
-                    <td> <%= order.ice %> </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </thead>
-</table>
+<div id="slideshow-container" style="position: relative; max-width: 200; height: auto;">
+    <% @slideshowImages.each_with_index do |image, i| %>
+    <% if i==0 %>
+        <div class="slide" style="display: block;">
+    <% else %>
+        <div class="slide" style="display: none;">
+    <% end %>
+        <p><%= image_tag "slideshow/#{image}", width: "100%" %></p>
+    </div>
+    <% end %>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let slides = document.querySelectorAll("#slideshow-container .slide");
+        let index = 0;
+
+        setInterval( () => {
+            slides[index].style.display = "none";
+            index = (index + 1) % slides.length;
+            slides[index].style.display = "block";
+        }, 3000);
+    });
+</script>
+
 
 
