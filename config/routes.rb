@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   get "boba_shop/index"
+  get "boba_shop/menu"
+  get "boba_shop/order"
+
+  root "boba_shop#index"
+  post "/boba_order" => "boba_shop#orderBoba"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

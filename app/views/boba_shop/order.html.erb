@@ -1,0 +1,53 @@
+<h1>BobaShop#order</h1>
+<p>Find me in app/views/my_home_page/order.html.erb</p>
+
+<form name="BobaOrder" action="/boba_order" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <div>
+        <p>Flavor:</p>
+        <p>
+            <input type="radio" name="flavorInput" value="Jasmine"> Jasmine<br>
+            <input type="radio" name="flavorInput" value="Taro"> Taro<br>
+            <input type="radio" name="flavorInput" value="Matcha"> Matcha<br>
+            
+        </p>
+    </div>
+    <div>
+        <p>Toppings:</p>
+        <p>
+            <input type="checkbox" name="toppingsInput[]" value="Boba"> Boba<br>
+            <input type="checkbox" name="toppingsInput[]" value="Lychee Jelly"> Lychee Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Grass Jelly"> Grass Jelly<br>
+        </p>
+    </div>
+
+    <div>
+        <p>Size:</p>
+        <p>
+            <input type="radio" name="sizeInput" value="Small"> Small<br>
+            <input type="radio" name="sizeInput" value="Medium"> Medium<br>
+            <input type="radio" name="sizeInput" value="Large"> Large<br>
+        </p>
+    <div>
+        <p>Sugar:</p>
+        <p>
+            <input type="radio" name="sugarInput" value="0%"> 0%<br>
+            <input type="radio" name="sugarInput" value="50%"> 50%<br>
+            <input type="radio" name="sugarInput" value="100%"> 100%<br>
+        </p>
+    </div>
+    <div>
+        <p>Ice:</p>
+        <p>
+            <input type="radio" name="iceInput" value="Light"> Light<br>
+            <input type="radio" name="iceInput" value="Medium"> Medium<br>
+            <input type="radio" name="iceInput" value="Heavy"> Heavy<br>
+            
+        </p>
+    </div>
+
+        <div>
+            <p><input type="submit" value="Place Order"></p>
+        </div>
+    </div>

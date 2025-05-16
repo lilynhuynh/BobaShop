@@ -1,2 +1,28 @@
 <h1>BobaShop#index</h1>
+
 <p>Find me in app/views/boba_shop/index.html.erb</p>
+
+<table>
+    <thead>
+        <tr>
+            <th> Flavor </th>
+            <th> Toppings </th>
+            <th> Size </th>
+            <th> Sugar </th>
+            <th> Ice </th>
+        </tr>
+        <tbody>
+            <% @allOrders.each do |order| %>
+                <tr>
+                    <td> <%= order.flavor %> </td>
+                    <td> <%= order.toppings %> </td>
+                    <td> <%= order.size %> </td>
+                    <td> <%= order.sugar %> </td>
+                    <td> <%= order.ice %> </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </thead>
+</table>
+
+
