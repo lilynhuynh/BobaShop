@@ -19,6 +19,7 @@ class BobaShopController < ApplicationController
 
     flavor = params[:flavorInput]
     toppings = params[:toppingsInput] || []
+    toppings_string = toppings.join(", ")
     size = params[:sizeInput]
     sugar = params[:sugarInput]
     ice = params[:iceInput]
@@ -28,7 +29,7 @@ class BobaShopController < ApplicationController
       "size" => size,
       "sugar" => sugar,
       "ice" => ice,
-      "toppings" => toppings
+      "toppings" => toppings_string
     }
 
     newRow = BobaOrder.new(map)
@@ -36,9 +37,15 @@ class BobaShopController < ApplicationController
     respond_to do |format|
       if newRow.save
         puts "Success!"
+        format.html { redirect_to confirmation_path }
       else
         format.html { redirect_to "/" }
       end
     end
+  end
+
+  def confirmation
+    @order = BobaOrder.order(created_at: :desc).first
+    puts @order.inspect
   end
 end
