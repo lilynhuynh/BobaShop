@@ -6,14 +6,17 @@
         <li style="float: left; margin-right: 20px;">
             <%= link_to "Menu", menu_path, style: "text-decoration: none; color: black;" %>
         </li>
-        <li style="float: left;">
+        <li style="float: left; margin-right: 20px;">
             <%= link_to "Order", order_path, style: "text-decoration: none; color: black;" %>
+        </li>
+        <li style="float: left;">
+            <%= link_to "Confirmation", confirmation_path, style: "text-decoration: none; color: black;" %>
         </li>
     </ul>
 </nav>
 
-<h1>BobaShop#order</h1>
-<p>Find me in app/views/my_home_page/order.html.erb</p>
+<h1>Order Form</h1>
+
 
 <form name="BobaOrder" action="/boba_order" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -21,18 +24,37 @@
     <div>
         <p>Flavor:</p>
         <p>
-            <input type="radio" name="flavorInput" value="Jasmine"> Jasmine<br>
+            <input type="radio" name="flavorInput" value="Classic Black"> Classic Black<br>
+            <input type="radio" name="flavorInput" value="Jasmine"> Jasmine <br>
+            <input type="radio" name="flavorInput" value="Oolong"> Oolong<br>
+            <input type="radio" name="flavorInput" value="Thai"> Thai<br>
             <input type="radio" name="flavorInput" value="Taro"> Taro<br>
             <input type="radio" name="flavorInput" value="Matcha"> Matcha<br>
+            <input type="radio" name="flavorInput" value="Honeydew"> Honeydew<br>
+            <input type="radio" name="flavorInput" value="Wintermelon"> Wintermelon<br>
+            <input type="radio" name="flavorInput" value="Hokkaido"> Hokkaido<br>
+            <input type="radio" name="flavorInput" value="Okinawa"> Okinawa<br>
+            <input type="radio" name="flavorInput" value="Almond"> Almond<br>
+            <input type="radio" name="flavorInput" value="Coconut"> Coconut<br>
+            <input type="radio" name="flavorInput" value="Coffee"> Coffee<br>
+            <input type="radio" name="flavorInput" value="Rose"> Rose<br>
+            <input type="radio" name="flavorInput" value="Brown Sugar"> Brown Sugar<br>
             
         </p>
     </div>
     <div>
         <p>Toppings:</p>
         <p>
-            <input type="checkbox" name="toppingsInput[]" value="Boba"> Boba<br>
+            <input type="checkbox" name="toppingsInput[]" value="Tapioca"> Tapioca<br>
             <input type="checkbox" name="toppingsInput[]" value="Lychee Jelly"> Lychee Jelly<br>
             <input type="checkbox" name="toppingsInput[]" value="Grass Jelly"> Grass Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Popping Boba<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Aloe Vera<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Lychee Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Rainbow Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Coffee Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Grass Jelly<br>
+            <input type="checkbox" name="toppingsInput[]" value="Popping Boba"> Coconut Jelly<br>
         </p>
     </div>
 
@@ -47,16 +69,19 @@
         <p>Sugar:</p>
         <p>
             <input type="radio" name="sugarInput" value="0%"> 0%<br>
+            <input type="radio" name="sugarInput" value="25%"> 25%<br>
             <input type="radio" name="sugarInput" value="50%"> 50%<br>
+            <input type="radio" name="sugarInput" value="75%"> 75%<br>
             <input type="radio" name="sugarInput" value="100%"> 100%<br>
         </p>
     </div>
     <div>
         <p>Ice:</p>
         <p>
-            <input type="radio" name="iceInput" value="Light"> Light<br>
-            <input type="radio" name="iceInput" value="Medium"> Medium<br>
-            <input type="radio" name="iceInput" value="Heavy"> Heavy<br>
+            <input type="radio" name="iceInput" value="No Ice"> No Ice<br>
+            <input type="radio" name="iceInput" value="Less"> Less Ice<br>
+            <input type="radio" name="iceInput" value="Regular Ice"> Regular Ice<br>
+            <input type="radio" name="iceInput" value="Extra Ice"> Extra Ice<br>
             
         </p>
     </div>

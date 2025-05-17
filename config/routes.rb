@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   get "boba_shop/index"
   get "boba_shop/menu"
   get "boba_shop/order"
+  get "boba_shop/confirmation"
 
   root "boba_shop#index"
   get "/menu" => "boba_shop#menu"
   get "/order" => "boba_shop#order"
   post "/boba_order" => "boba_shop#orderBoba"
+  get "/confirmation" => "boba_shop#confirmation"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
